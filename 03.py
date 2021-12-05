@@ -6,34 +6,34 @@ def convert_binary(binary):
         res += int(b)*(2**idx)
     return res
 
-# with open('03.txt', 'r') as file:
-#     data = [tuple([b for b in line if b != '\n']) for line in file]
+with open('03.txt', 'r') as file:
+    data = [tuple([b for b in line if b != '\n']) for line in file]
 
-#     gamma = ['0']*len(data[0])
-#     epsilon = ['0']*len(data[0])
-#     majority_border = len(data)//2
+    gamma = ['0']*len(data[0])
+    epsilon = ['0']*len(data[0])
+    majority_border = len(data)//2
     
-#     for idx in range(len(data[0])):
-#         count_0 = 0
-#         count_1 = 0
-#         for binary in data:
-#             if binary[idx] == '0':
-#                 count_0 = count_0+1
-#             else:
-#                 count_1 = count_1+1
+    for idx in range(len(data[0])):
+        count_0 = 0
+        count_1 = 0
+        for binary in data:
+            if binary[idx] == '0':
+                count_0 = count_0+1
+            else:
+                count_1 = count_1+1
             
-#             if count_0 > majority_border:
-#                 gamma[idx] = 0
-#                 epsilon[idx] = 1
-#                 break
-#             if count_1 > majority_border:
-#                 gamma[idx] = 1
-#                 epsilon[idx] = 0            
+            if count_0 > majority_border:
+                gamma[idx] = 0
+                epsilon[idx] = 1
+                break
+            if count_1 > majority_border:
+                gamma[idx] = 1
+                epsilon[idx] = 0            
             
-#     gamma_dec = convert_binary(gamma)
-#     epsilon_dec = convert_binary(epsilon)
+    gamma_dec = convert_binary(gamma)
+    epsilon_dec = convert_binary(epsilon)
 
-#     print(gamma_dec*epsilon_dec)
+    print(gamma_dec*epsilon_dec)
 
 # part 2
 
