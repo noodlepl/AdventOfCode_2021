@@ -94,6 +94,4 @@ with open('04.txt', 'r') as file:
     false_sum = sum([num[0] for line in winner for num in line if num[1] == False])
     print(false_sum)
     print(last_number)
-    print(false_sum * last_number)
-
-        
+    print(false_sum * last_number)    
