@@ -1,7 +1,5 @@
 #! /usr/local/bin/python3
 
-import pdb
-
 #return winning board or None
 def bingo(boards):
     for board in boards:
@@ -61,7 +59,7 @@ with open('04.txt', 'r') as file:
 
     winner = None
     last_number = -1
-    
+
     for number in numbers:
         last_number = number
         for board in boards:
@@ -72,6 +70,10 @@ with open('04.txt', 'r') as file:
         winner = bingo(boards)
         if winner != None:
             break
+    false_sum = sum([num[0] for line in winner for num in line if num[1] == False])
+    print(false_sum)
+    print(last_number)
+    print(false_sum * last_number)
 
     # part 2
     for number in numbers:
