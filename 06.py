@@ -3,19 +3,18 @@
 with open('06.txt', 'r') as file:
     lanternfish = [int(num) for num in file.readline().strip().split(',')]
 
-    # import pdb; pdb.set_trace()
-    # for day in range(80):
-    #     print(day)
-    #     fish_to_add = 0
-    #     for idx, fish in enumerate(lanternfish):
-    #         if fish == 0:
-    #             lanternfish[idx] = 6
-    #             fish_to_add += 1
-    #             continue
-    #         lanternfish[idx] -= 1
-    #     lanternfish.extend([8]*fish_to_add)
+    for day in range(80):
+        print(day)
+        fish_to_add = 0
+        for idx, fish in enumerate(lanternfish):
+            if fish == 0:
+                lanternfish[idx] = 6
+                fish_to_add += 1
+                continue
+            lanternfish[idx] -= 1
+        lanternfish.extend([8]*fish_to_add)
     
-    # print(len(lanternfish))
+    print(len(lanternfish))
 
     #part 2
     fish_dict = {}
@@ -24,7 +23,6 @@ with open('06.txt', 'r') as file:
         fish_dict[num] = count_num
 
     print(fish_dict)
-    # import pdb; pdb.set_trace()
     for day in range(256):
         zeros_temp = fish_dict[0]
         for fish in range(8):
